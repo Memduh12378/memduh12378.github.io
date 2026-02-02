@@ -1,98 +1,14 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<title>TURAN</title>
-
-<style>
-:root {
-  --bg: #0f0f0f;
-  --text: #ffffff;
-  --box: #1c1c1c;
-}
-
-body.light {
-  --bg: #f5f5f5;
-  --text: #000000;
-  --box: #ffffff;
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: Arial, sans-serif;
-}
-
-.top-bar {
-  position: fixed;
-  top: 15px;
-  right: 20px;
-}
-
-.toggle {
-  cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 6px;
-  background: var(--box);
-}
-
-.container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo {
-  width: 140px;
-  margin-bottom: 20px;
-}
-
-.search-box {
-  width: 420px;
-  padding: 14px;
-  border-radius: 30px;
-  border: none;
-  outline: none;
-  font-size: 16px;
-}
-
-.sites {
-  display: flex;
-  gap: 15px;
-  margin-top: 25px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.site {
-  width: 120px;
-  padding: 15px;
-  text-align: center;
-  border-radius: 12px;
-  background: var(--box);
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.site:hover {
-  transform: scale(1.05);
-}
-
-.site a {
-  text-decoration: none;
-  color: var(--text);
-  font-size: 14px;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>TURAN</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="top-bar">
-  <div class="toggle" onclick="toggleTheme()">Tema</div>
+  <button id="themeBtn">Tema</button>
 </div>
 
 <div class="container">
@@ -100,30 +16,39 @@ body {
   <img src="assets/logo.png" class="logo">
   <h1>TURAN</h1>
 
-  <input class="search-box" placeholder="TURAN'da ara..." disabled>
+  <input 
+    type="text" 
+    class="search-box" 
+    placeholder="TURAN'da ara..."
+    disabled
+  >
 
   <div class="sites">
-    <div class="site">
-      <a href="https://youtube.com" target="_blank">YouTube</a>
-    </div>
-    <div class="site">
-      <a href="https://itch.io" target="_blank">Oyun Blog</a>
-    </div>
-    <div class="site">
-      <a href="https://example.com" target="_blank">Benim Sitem</a>
-    </div>
-    <div class="site">
-      <a href="#" target="_blank">Galeri</a>
-    </div>
+
+    <a class="site" href="https://youtube.com" target="_blank">
+      <img src="assets/youtube.png">
+      <span>YouTube</span>
+    </a>
+
+    <a class="site" href="https://itch.io" target="_blank">
+      <img src="assets/blog.png">
+      <span>Oyun Blogları</span>
+    </a>
+
+    <a class="site" href="https://example.com" target="_blank">
+      <img src="assets/site.png">
+      <span>Benim Sitelerim</span>
+    </a>
+
+    <a class="site" href="#">
+      <img src="assets/gallery.png">
+      <span>Galeri</span>
+    </a>
+
   </div>
 
 </div>
 
-<script>
-function toggleTheme() {
-  document.body.classList.toggle("light");
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
