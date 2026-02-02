@@ -80,3 +80,32 @@ body {
 .site:hover {
   transform: translateY(-5px);
 }
+
+#results {
+  margin-top: 30px;
+  width: 500px;
+}
+
+.result {
+  background: var(--box);
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.result h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.result p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.badge {
+  font-size: 11px;
+  opacity: 0.7;
+}
