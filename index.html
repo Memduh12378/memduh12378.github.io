@@ -5,53 +5,24 @@
   <title>TURAN</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="light">
 
-<div class="top-bar">
   <button id="themeBtn">Tema</button>
-</div>
 
-<div class="container">
+  <div class="container">
+    <img src="assets/logo.png" class="logo">
+    <h1>TURAN</h1>
 
-  <img src="assets/logo.png" class="logo">
-  <h1>TURAN</h1>
+    <input
+      type="text"
+      id="searchInput"
+      class="search-box"
+      placeholder="TURAN'da ara..."
+    >
 
-<input 
-  type="text" 
-  class="search-box"
-  id="searchInput"
-  placeholder="TURAN'da ara..."
->
-
-  <div id="results"></div>
-
-
-  <div class="sites">
-
-    <a class="site" href="https://youtube.com" target="_blank">
-      <img src="assets/youtube.png">
-      <span>YouTube</span>
-    </a>
-
-    <a class="site" href="https://itch.io" target="_blank">
-      <img src="assets/blog.png">
-      <span>Oyun Blogları</span>
-    </a>
-
-    <a class="site" href="https://example.com" target="_blank">
-      <img src="assets/site.png">
-      <span>Benim Sitelerim</span>
-    </a>
-
-    <a class="site" href="#">
-      <img src="assets/gallery.png">
-      <span>Galeri</span>
-    </a>
-
+    <div id="results"></div>
   </div>
 
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
