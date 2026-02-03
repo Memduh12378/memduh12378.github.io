@@ -51,6 +51,24 @@ const data = [
     url: "https://memduh12378.github.io/"
   },
   {
+    title: "Roblox",
+    category: "Oyunlar",
+    desc: "Robloxun ana sayfası",
+    url: "https://www.roblox.com/tr"
+  },
+  {
+    title: "Reddit",
+    category: "Sosyal Medya",
+    desc: "Reddit'in ana sayfası",
+    url: "https://www.reddit.com/"
+  },
+  {
+    title: "Piskel",
+    category: "Oyunlar",
+    desc: "Piksel çizim için mükemmel bir site.",
+    url: "https://www.piskelapp.com/"
+  },
+  {
     title: "PixelLabAI",
     category: "Yapay Zeka",
     desc: "AI karakter oluşturma aracı",
