@@ -5,9 +5,30 @@
   --box-dark: rgba(0,0,0,0.6);
 }
 
+::selection {
+  background: red;
+  color: #000000;
+}
+
+#title {
+  color: #000000;
+  font-family: 'Goldman', sans-serif;
+  font-weight: 900;
+  filter: drop-shadow(0 0 10px #ffffff);
+  font-size: 50px;
+  margin: -5px;
+}
+
+#des {
+  color: black;
+  font-family: 'Goldman', sans-serif;
+  font-weight: 600;
+  filter: drop-shadow(0 0 10px #ffffff);
+}
+
 /* GENEL */
 body {
-  margin: 0;
+  margin: 0px;
   font-family: Arial, sans-serif;
   transition: background-image 0.6s ease, color 0.4s ease;
   background-size: cover;
@@ -34,10 +55,30 @@ body.dark {
   right: 20px;
   padding: 8px 14px;
   border-radius: 6px;
-  border: none;
+  font-weight: 500;
+  font-size: 20px;
+  border: 2px solid wheat;
   cursor: pointer;
-  background: rgba(0,0,0,0.5);
-  color: white;
+  font-family: 'Goldman', sans-serif;
+  filter: drop-shadow(0 0 10px);
+  background: rgb(0 0 0);
+  color: wheat;
+  transition: 0.4s;
+}
+
+#themeBtn:hover {
+  background:wheat;
+  color: black;
+  filter: drop-shadow(0 0 10px wheat);
+  border: 2px solid #000000;
+  scale: 1.2;
+  rotate: -5deg;
+}
+
+#themeBtn:focus {
+  background: black;
+  color: wheat;
+  border: 2px solid wheat;
 }
 
 /* ORTA ALAN */
@@ -50,8 +91,9 @@ body.dark {
 }
 
 .logo {
-  width: 150px;
-  margin-bottom: 10px;
+  width: 350px;
+  margin-bottom: -50px;
+  filter: drop-shadow(0 0 10px white);
 }
 
 /* SEARCH */
@@ -59,10 +101,23 @@ body.dark {
   width: 420px;
   padding: 14px 18px;
   border-radius: 30px;
-  border: none;
+  border: 2px solid black;
   outline: none;
+  font-family: 'Goldman', sans-serif;
+  font-weight: 700;
+  background: wheat;
+  filter: drop-shadow(0 0 10px wheat);
   font-size: 16px;
-  margin-top: 15px;
+  margin-top: 8px;
+  transition: 0.3s;
+}
+
+.search-box:focus {
+  background: black;
+  color: wheat;
+  filter: drop-shadow(0 0 10px black);
+  scale: 1.1;
+  border: 2px solid wheat;
 }
 
 /* SONUÇLAR */
