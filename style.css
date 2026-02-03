@@ -1,97 +1,95 @@
 :root {
-  --bg: #0f0f0f;
-  --text: #ffffff;
-  --box: #1c1c1c;
+  --text-light: #000;
+  --text-dark: #fff;
+  --box-light: rgba(255,255,255,0.8);
+  --box-dark: rgba(0,0,0,0.6);
 }
 
-body.light {
-  --bg: #f5f5f5;
-  --text: #000000;
-  --box: #ffffff;
-}
-
+/* GENEL */
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
   font-family: Arial, sans-serif;
+  transition: background-image 0.6s ease, color 0.4s ease;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-.top-bar {
+/* LIGHT THEME (BAŞLANGIÇ) */
+body.light {
+  background-image: url("assets/light.png");
+  color: var(--text-light);
+}
+
+/* DARK THEME */
+body.dark {
+  background-image: url("assets/dark.png");
+  color: var(--text-dark);
+}
+
+/* TEMA BUTONU */
+#themeBtn {
   position: fixed;
-  top: 15px;
+  top: 20px;
   right: 20px;
-}
-
-.top-bar button {
-  background: var(--box);
-  color: var(--text);
-  border: none;
   padding: 8px 14px;
   border-radius: 6px;
+  border: none;
   cursor: pointer;
+  background: rgba(0,0,0,0.5);
+  color: white;
 }
 
+/* ORTA ALAN */
 .container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .logo {
   width: 150px;
+  margin-bottom: 10px;
 }
 
+/* SEARCH */
 .search-box {
-  margin-top: 20px;
   width: 420px;
   padding: 14px 18px;
   border-radius: 30px;
   border: none;
   outline: none;
   font-size: 16px;
+  margin-top: 15px;
 }
 
-.sites {
-  margin-top: 35px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  gap: 20px;
-  width: 500px;
-}
-
-.site {
-  background: var(--box);
-  border-radius: 14px;
-  padding: 15px;
-  text-align: center;
-  text-decoration: none;
-  color: var(--text);
-  transition: 0.2s;
-}
-
-.site img {
-  width: 36px;
-  margin-bottom: 10px;
-}
-
-.site:hover {
-  transform: translateY(-5px);
-}
-
+/* SONUÇLAR */
 #results {
-  margin-top: 30px;
   width: 500px;
+  margin-top: 30px;
 }
 
 .result {
-  background: var(--box);
-  padding: 15px;
-  border-radius: 12px;
   margin-bottom: 12px;
+  padding: 14px;
+  border-radius: 12px;
   cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: transform 0.2s;
+}
+
+body.light .result {
+  background: var(--box-light);
+}
+
+body.dark .result {
+  background: var(--box-dark);
+}
+
+.result:hover {
+  transform: translateY(-4px);
 }
 
 .result h3 {
@@ -100,12 +98,8 @@ body {
 }
 
 .result p {
-  margin: 5px 0 0;
+  margin: 6px 0 0;
   font-size: 13px;
   opacity: 0.8;
 }
 
-.badge {
-  font-size: 11px;
-  opacity: 0.7;
-}
