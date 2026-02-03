@@ -1,50 +1,97 @@
-// ====== ARAMA VERİSİ ======
+// =======================
+// TURAN SEARCH INDEX
+// =======================
 const data = [
   {
-    title: "TURAN Search",
-    desc: "Kişisel arama motoru projem.",
-    url: "https://memduh12378.github.io"
+    title: "YouTube",
+    category: "Video",
+    desc: "YouTube ana sitesi",
+    url: "https://www.youtube.com"
   },
   {
-    title: "Zombi Oyunu",
-    desc: "Hayatta kalma korku oyunu geliştirme süreci.",
-    url: "https://example.com"
+    title: "Itch.io",
+    category: "Oyun",
+    desc: "Indie oyun platformu",
+    url: "https://itch.io"
   },
   {
-    title: "YouTube Kanalım",
-    desc: "Oyun geliştirme ve içerik videoları.",
-    url: "https://youtube.com"
+    title: "Canva",
+    category: "Tasarım",
+    desc: "Online tasarım aracı",
+    url: "https://www.canva.com"
+  },
+  {
+    title: "GitHub",
+    category: "Kod",
+    desc: "Kod depolama ve projeler",
+    url: "https://github.com"
+  },
+  {
+    title: "MinnoşAI",
+    category: "Yapay Zeka",
+    desc: "MinnoşAI Google Colab projesi",
+    url: "https://colab.research.google.com/drive/132oIEpta8BM0HL1R_fpYMY-e0M-V76Pj"
+  },
+  {
+    title: "ChatGPT",
+    category: "Yapay Zeka",
+    desc: "OpenAI ChatGPT",
+    url: "https://chat.openai.com"
+  },
+  {
+    title: "Rust Skull Games",
+    category: "Oyun Stüdyosu",
+    desc: "Rust Skull Games resmi sitesi",
+    url: "https://rustskullgames.github.io/"
+  },
+  {
+    title: "TURAN",
+    category: "Kişisel",
+    desc: "Kişisel arama motorum",
+    url: "https://memduh12378.github.io/"
+  },
+  {
+    title: "PixelLabAI",
+    category: "Yapay Zeka",
+    desc: "AI karakter oluşturma aracı",
+    url: "https://www.pixellab.ai/create-character"
   }
 ];
 
-// ====== SEARCH ======
+// =======================
+// SEARCH LOGIC
+// =======================
 const input = document.getElementById("searchInput");
 const results = document.getElementById("results");
 
 input.addEventListener("input", () => {
-  const q = input.value.toLowerCase();
+  const query = input.value.toLowerCase().trim();
   results.innerHTML = "";
 
-  if (q.length < 2) return;
+  if (query.length < 1) return;
 
-  data
-    .filter(item =>
-      item.title.toLowerCase().includes(q) ||
-      item.desc.toLowerCase().includes(q)
-    )
-    .forEach(item => {
-      const div = document.createElement("div");
-      div.className = "result";
-      div.innerHTML = `
-        <h3>${item.title}</h3>
-        <p>${item.desc}</p>
-      `;
-      div.onclick = () => window.open(item.url, "_blank");
-      results.appendChild(div);
-    });
+  const filtered = data.filter(item =>
+    item.title.toLowerCase().includes(query) ||
+    item.category.toLowerCase().includes(query) ||
+    item.desc.toLowerCase().includes(query)
+  );
+
+  filtered.forEach(item => {
+    const div = document.createElement("div");
+    div.className = "result";
+    div.innerHTML = `
+      <h3>${item.title}</h3>
+      <p>${item.desc}</p>
+      <small>${item.category}</small>
+    `;
+    div.onclick = () => window.open(item.url, "_blank");
+    results.appendChild(div);
+  });
 });
 
-// ====== TEMA ======
+// =======================
+// THEME TOGGLE (AYNI)
+// =======================
 const themeBtn = document.getElementById("themeBtn");
 
 themeBtn.addEventListener("click", () => {
