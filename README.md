@@ -1,2 +1,2 @@
 # memduh12378.github.io
-TURAN - Kişisel Arama Motoru
+Tüm Yapmış Olduğum Siteleri Kapsayan Devasa Bir Kişisel Site
